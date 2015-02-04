@@ -1,0 +1,8 @@
+How to setup SoD plugin with demo2-cf-template-helloworldwithcolor:
+1. Similar to demo0-cf-template-ec2instance.Readme
+2. But additional parameter is required while CF Launch Profile creation
+   Add new param #2: name = IAMRole, value = name of your existing IAM Role, which allows to call ec2-describe-tags and ec2-metadata
+
+3. Additionally add new custom field (Administration -> Add-ons -> General) with name color
+4. Finish. Now you are able to start Demo 2 stack via SoD gadget.
+   Enter any css color on the second step of Start Stack wizard, e.g. #ff0000 or red. This color will be applied to helloWorld webapp.

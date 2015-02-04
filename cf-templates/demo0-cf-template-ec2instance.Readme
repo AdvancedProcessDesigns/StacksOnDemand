@@ -1,0 +1,30 @@
+How to setup SoD plugin with demo0-cf-template-ec2instance:
+1. Create CF Stack Template (Administration -> Add-ons -> CF Stack Templates), e.g. demoCF0
+   Input demo0-cf-template-ec2instance as Body
+   Click "Save"
+2 Create CF Launch Profile (Administration -> Add-ons -> Launch Profiles), e.g. demoLP0
+   Choose CF Stack Template, select demoCF0
+   Add new param #1: name = KeyName, value = your Key Pair Name (http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
+   If you'd like, you may add optional param #2: name = InstanceType, value = one from ["t1.micro", "t2.micro", "t2.small", "t2.medium", "m1.small", "m1.medium", "m1.large", "m1.xlarge", "m2.xlarge", "m2.2xlarge", "m2.4xlarge", "m3.medium", "m3.large", "m3.xlarge", "m3.2xlarge", "c1.medium", "c1.xlarge", "c3.large", "c3.xlarge", "c3.2xlarge", "c3.4xlarge", "c3.8xlarge", "g2.2xlarge", "r3.large", "r3.xlarge", "r3.2xlarge", "r3.4xlarge", "r3.8xlarge", "i2.xlarge", "i2.2xlarge", "i2.4xlarge", "i2.8xlarge", "hi1.4xlarge", "hs1.8xlarge", "cr1.8xlarge", "cc2.8xlarge", "cg1.4xlarge"]
+   Click "Save"
+3. Update Stack Configuration (Administration -> Add-ons -> Stack Configuration).
+   Extends xml as shown below:
+	   <stackProfiles>
+	    ...
+	    <stackProfile>
+		<awsAccountId>yourAwsCredentials</awsAccountId>
+		<defaultExpirationPeriod>55</defaultExpirationPeriod>
+		<description>Create an empty EC2 instance</description>
+		<launchProfiles>
+		    <launchProfile>demoLP0</launchProfile>
+		</launchProfiles>
+		<maxExpirationPeriod>480</maxExpirationPeriod>
+		<name>Demo 0</name>
+		<permittedGroups>
+		    <permittedGroup>jira-administrators</permittedGroup>
+		</permittedGroups>
+	    </stackProfile>
+	   </stackProfiles>
+
+   Click "Save"
+4. Finish. Now you are able to start Demo 0 stack via SoD gadget.
