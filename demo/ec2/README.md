@@ -5,10 +5,11 @@ AMI content:
 3. Install tomcat7
     sudo yum install tomcat7
 4. Run tomcat7 on startup. Verify that tomcat7 is running under root in order to allow port 80 to be permitted for tomcat7.
+    
     chkconfig --add tomcat7
     chkconfig tomcat7 on
-5. If you want the port 80 (default http port) to be used by application, change server.xml config in such way:
-replace the standard 8080 port of config element
+5. If you want the port 80 (default http port) to be used by application, find server.xml config file in /tomcat7/conf/ folder and replace the standard 8080 port of config element
+from
     
     <Connector port="8080" protocol="HTTP/1.1"
                connectionTimeout="20000"
