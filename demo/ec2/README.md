@@ -38,4 +38,4 @@ http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-inst
 
 List of public AMI.
 ----
-1.*ami-f36158c3* *pureHelloWorldAppFinal* AMI. Contains very simple webapp application helloWorld available at http://ip:8080/simple-form.
+1.*ami-5b5f676b* *pureHelloWorldAppFinalv2* AMI. Contains very simple webapp application helloWorld available at http://ip
