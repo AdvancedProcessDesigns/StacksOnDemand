@@ -38,4 +38,4 @@ http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-inst
 
 List of public AMI.
 ----
-1.*ami-5b5f676b* *pureHelloWorldAppFinalv2* AMI. Contains very simple webapp application helloWorld available at http://ip
+1.*ami-49484e79* pureHelloWorldAppFinalv3* AMI. Runs simple Tomcat 7 with deployed Hello World Application accessible via port 80 (http standard port) available at http://ip
